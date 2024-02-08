@@ -1,13 +1,12 @@
 SELECT * FROM Products; -- find all products
 
-SELECT * FROM Products
-WHERE Price LIKE'1400%'; -- find all products that cost $1400
+SELECT * FROM Products WHERE Price LIKE'1400%'; -- find all products that cost $1400
 
 SELECT * FROM Products WHERE Price = '11.99' or Price ='13.99'; -- find all products that cost $11.99 or $13.99
 
 SELECT * FROM Products WHERE Price != '11.99';-- find all products that do NOT cost 11.99 - using NOT
 
-SELECT * FROM Products ORDER BY Name; -- find all products and sort them by price from greatest to least
+SELECT * FROM Products ORDER BY Price desc; -- find all products and sort them by price from greatest to least
 
 SELECT * FROM Products WHERE Name = null; -- find all employees who don't have a middle initial
 
