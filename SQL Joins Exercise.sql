@@ -1,6 +1,6 @@
 /* joins: select all the computers from the products table:
 using the products table and the categories table, return the product name and the category name */
-SELECT Products.name, Categories.name
+SELECT Products.name, Categories.name AS "category name"
 FROM Products
 Join Categories ON Products.CategoryID = Categories.CategoryID
 WHERE Categories.name = 'computers';
@@ -12,9 +12,9 @@ WHERE Categories.name = 'computers';
  JOIN reviews on products.productID = reviews.ProductID
  WHERE reviews.rating = 5;
 /* joins: find the employee with the most total quantity sold.  use the sum() function and group by */
-SELECT Employees.FirstName, Employees.LastName, SUM(sales.quantity) AS "Total Sales"
-From Employees JOIN Sales ON employees.EmployeeID = sales.EmployeeID
-GROUP BY Employees.employeeID;
+SELECT Employees.FirstName, Employees.LastName, SUM(sales.quantity) AS total
+From Employees JOIN Sales ON employees.EmployeeID = sales.EmployeeID 
+GROUP BY Employees.employeeID ORDER BY total DESC LIMIT 2;
 
 /* joins: find the name of the department, and the name of the category for Appliances and Games */
 SELECT  categories.name AS "Category", departments.name AS "Department"
